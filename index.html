@@ -3,21 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <title>Frontend Mentor | Product preview card component</title>
-
-  
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
       body {
         background-color: hsl(30, 38%, 92%);
         font-family: "Montserrat", sans-serif;
@@ -28,62 +23,67 @@
         align-items: center;
         min-height: 100vh;
       }
-      div {
+      .container {
         background-color: white;
-        width: 267px;
-        border-radius: 0px 10px 10px 0px;
-        padding-left: 20px;
-        padding-right: -20px;
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px 0 rgba(0,0,0,0.08);
+        width: 600px;
+        max-width: 90vw;
       }
       .img {
-        width: 267px;
-        height: auto;
+        width: 300px;
+        height: 100%;
         object-fit: cover;
-        border-radius: 10px 0px 0px 10px;
+      }
+      .content {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 300px;
       }
       .p {
         color: hsl(228, 12%, 48%);
         font-family: "Montserrat", sans-serif;
         font-size: 12px;
         letter-spacing: 5px;
-        margin-top: 10px;
-        margin-bottom: 0px;
+        margin-top: 0;
+        margin-bottom: 16px;
       }
       h1 {
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 28px;
-        margin-top: 0px;
-        margin-bottom: 10px;
+        margin-top: 0;
+        margin-bottom: 16px;
         line-height: 1.24;
       }
-      figure {
+      .p-2 {
         font-size: 14px;
         color: hsl(212, 21%, 14%);
         line-height: 1.5;
-        margin-left: 3px;
+        margin-bottom: 24px;
+      }
+      .prices {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
       }
       h2 {
         color: hsl(158, 36%, 37%);
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 28px;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 15px;
+        margin-right: 20px;
+        margin-bottom: 0;
       }
       .p-3 {
-        margin-top: 20px;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 15px;
         color: hsl(228, 12%, 48%);
         text-decoration: line-through;
         font-size: 14px;
-      }
-      .rice {
-        width: 220px;
-        margin-left: -20px;
+        margin-bottom: 0;
       }
       .button {
         display: flex;
@@ -95,28 +95,24 @@
         width: 100%;
         height: 50px;
         justify-content: center;
-        border-radius: 5px;
-        font-size: 14px;
-      }
-      button {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 14px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
-        letter-spacing: 1px;
         cursor: pointer;
-      }
-      .icon {
-        color: white;
-        width: 15px;
-        height: auto;
-        cursor: pointer;
+        margin-top: auto;
+        transition: background 0.2s;
       }
       .button:hover {
         background-color: hsl(158, 36%, 25%);
       }
-@media (max-width: 600px) {
+      .icon {
+        width: 18px;
+        height: auto;
+        color: white;
+      }
+
+      @media (max-width: 600px) {
         body {
           align-items: flex-start;
         }
@@ -140,32 +136,28 @@
     </style>
   </head>
   <body>
-    <div class="box-1">
-    <img
-      class="img"
-      src="./images/image-product-desktop.jpg"
-      alt="Product Image"
-    />
-    <div>
-      <figure>
+    <div class="container">
+      <img
+        class="img"
+        src="./images/image-product-desktop.jpg"
+        alt="Product Image"
+      />
+      <div class="content">
         <p class="p">PERFUME</p>
-
         <h1>Gabrielle Essence Eau De Parfum</h1>
-
         <p class="p-2">
           A floral, solar and voluptuous interpretation composed by Olivier
           Polge, Perfumer-Creator for the House of CHANEL.
         </p>
-        <div class="rice">
+        <div class="prices">
           <h2>$149.99</h2>
           <p class="p-3">$169.99</p>
         </div>
-        <span class="button">
+        <button class="button">
           <img class="icon" src="./images/icon-cart.svg" alt="cart icon" />
-          <button>Add to Cart</button>
-        </span>
-      </figure>
-    </div>
+          Add to Cart
+        </button>
+      </div>
     </div>
   </body>
 </html>
